@@ -1,0 +1,17 @@
+<app-temp (btnClick)="toggleAddItem()" color="{{showAddItem ? '#f59790' : 'green' }}" text="{{showAddItem ? 'Close' : 'Add Item' }}"></app-temp>
+<form *ngIf="showAddItem" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="item" class="form-label"> Add required details : </label>
+        <input class="form-control mt-3"[(ngModel)]="id" name="id" type="text" id="id" value="" placeholder="Add title"/>
+        <input class="form-control mt-3"[(ngModel)]="title" name="title" type="text" id="title" value="" placeholder="Add title"/>
+        <input class="form-control mt-3" [(ngModel)]="price" type="text" name="price" id="price" value="" placeholder="Add price"/>
+        <input class="form-control mt-3" [(ngModel)]="image" type="text" id="image" name="image" value="" placeholder="Add img link"/>
+        <input class="form-control mt-3" [(ngModel)]="description" type="text" id="description" name="description" value="" placeholder="Add description"/>
+        <input class="form-control mt-3" [(ngModel)]="category" type="text" id="category" name="category" value="" placeholder="Add category"/>
+        <div class=" mt-3">
+            <label for="reminder" >Added to cart</label>
+            <input class="ms-3" [(ngModel)]="reminder" name="reminder" type="checkbox" id="reminder"/>
+        </div>
+        <button type="submit" class="btn form-control mt-3 btn-success">Add</button>
+</div>
+</form>

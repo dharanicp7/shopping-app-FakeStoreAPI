@@ -1,0 +1,15 @@
+<div class="p-4" *ngFor="let item of items">
+    <!-- <h2>{{item.id}}</h2> -->
+    <div class="row">
+        <div class="col-9">
+            <h3 class="">{{item.title}}</h3>
+        <h4 class="mt-4 price">$ {{item.price}}</h4>
+<button class="my-4 btn btn-warning" [ngClass]="{reminder : item.reminder}" (click)="onCart(item)">Add to cart</button>
+<button class="ms-3 btn btn-danger"(click)="onClick(item)">Del</button>
+        </div> 
+       
+        <img class="col-3 image" src="{{item.image}}" />
+    </div>
+    <p id="read-more">{{item.description.slice(0,200)}} ...</p>
+    <hr>
+</div> 
